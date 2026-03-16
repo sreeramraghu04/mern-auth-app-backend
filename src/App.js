@@ -8,9 +8,15 @@ import AuthRoutes from "./routes/AuthRoutes.js";
 const app = express();
 
 //! middlewares
-app.use(cors()); //*allows to interact with client which is loaded in different domain
-app.use(express.json()); //*instructing the app to accept data in the json format
-app.use(morgan.apply("dev")); //*logs requests, errors and more to the console
+app.use(
+  cors({
+    origin: `https://mern-auth-app-frontend.netlify.app`, //* allows your frontend origin
+    methods: [`GET`, `POST`, `PUT`, `DELETE`],
+    credentials: true, //* if using cookies or authentication headers
+  }),
+); //* allows to interact with client which is loaded in different domain
+app.use(express.json()); //* instructing the app to accept data in the json format
+app.use(morgan.apply("dev")); //* logs requests, errors and more to the console
 app.use(cookieParser()); //* it allows the server access user cookies
 
 //! routes
