@@ -1,4 +1,4 @@
-import app from "./src/App.js";
+/* import app from "./src/App.js";
 import colors from "colors";
 import config from "./src/config/config.js";
 import mongoose from "mongoose";
@@ -20,4 +20,31 @@ app.listen(PORT, () => {
       error,
     });
   }
-})();
+})(); */
+
+import app from "./src/App.js";
+import colors from "colors";
+import config from "./src/config/config.js";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const PORT = config.PORT || 5000;
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(config.MONGODB_URL);
+    console.log("Mongo URL:", config.MONGODB_URL);
+    console.log("MongoDB connected".bgBlack.green);
+
+    app.listen(PORT, () => {
+      console.log(`App is running at PORT ${PORT}`.bgBlack.blue);
+    });
+  } catch (error) {
+    console.log(`Error in db connection ${error}`.bgRed.white);
+    process.exit(1);
+  }
+};
+
+connectDB();
