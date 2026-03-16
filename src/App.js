@@ -10,7 +10,7 @@ const app = express();
 //! middlewares
 app.use(
   cors({
-    origin: `https://mern-auth-app-frontend.netlify.app`, //* allows your frontend origin
+    origin: `https://authentication-app.sreeramraghu.online`, //* allows your frontend origin
     methods: [`GET`, `POST`, `PUT`, `DELETE`],
     credentials: true, //* if using cookies or authentication headers
   }),
