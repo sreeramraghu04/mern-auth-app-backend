@@ -27,7 +27,7 @@ app.use("/api/v1/auth", AuthRoutes);
 console.log(Key);
  */
 app.get("/", (req, res) => {
-  res.send("<h1>hello authentication-app</h1>");
+  res.send("<h1>MERN User Authentication App</h1>");
 });
 
 export default app;
