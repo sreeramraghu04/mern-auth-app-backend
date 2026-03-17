@@ -1,8 +1,8 @@
 {
-  "name": "authentication-web-app",
+  "name": "authentication-app",
   "version": "1.0.0",
   "type": "module",
-  "description": "authentication website for study purpose",
+  "description": "authentication web app",
   "keywords": [
     "node.js",
     "express.js",
@@ -10,7 +10,7 @@
     "postman"
   ],
   "license": "ISC",
-  "author": "sreeram",
+  "author": "ram",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
